@@ -17,18 +17,52 @@
 
 <div id="app">
 
-    <input id="inputField" v-model="word" placeholder="word">
+
+<!--  Solution 1 -->
+
+    <input id="inputField" v-model="word1" placeholder="word">
     <button id="button" v-on:click="manipulate(word)" class="btn btn-primary">Show it</button>
 
-    <ol>
-    <li v-for="word in words"> {{word}}</li> 
-    </ol>
+    <table class="table table-striped">
 
-    <ol class="list-group">
-    <li class="list-group-item" v-for="(word, index) in words"> {{++index}} {{word}}</li> 
-    </ol>
+  <tbody> 
+    <tr v-for="(word, index) in words">
+      <td>
+        {{++index}}
+      </td>
+      <td>
+        {{word}}
+    </td> 
+  </tr>
+  </tbody> 
+</table>
+
+<!-- Solution 2 -->
+
+    <input v-model.lazy="word" placeholder="word">
+    <button v-on:click="manipulate2()" type="button">Show it!</button>
     
+    <table class="table table-striped">
+        
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td> {{word}}</td>
+          </tr>
 
+          <tr>
+            <td>2</td>
+            <td> {{lower}}</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td> {{upper}}</td>
+          </tr>
+
+
+        </tbody>
+      </table>
 
 </div>
 <script src="js/index.js"></script> 

@@ -1,8 +1,11 @@
 Vue.createApp({
     data() {
         return {
-            word: null,
-            words: [],
+            word: "",
+            lower: "",
+            upper: "",
+            word1: null,
+            words: []
         
         }
     },
@@ -10,12 +13,19 @@ Vue.createApp({
     methods: {
 
         manipulate(word) {
-           
-            this.words.push(word)
-            this.words.push(word.toLowerCase())
-            this.words.push(word.toUpperCase())
-        
+            this.words = []
+            this.words.push(this.word1)
+            this.words.push(this.word1.toLowerCase())
+            this.words.push(this.word1.toUpperCase())
         },
+
+        manipulate2() {
+        
+            this.lower = this.word.toLowerCase()
+            this.upper = this.word.toUpperCase()
+        }
+
+        
 
 
     }
